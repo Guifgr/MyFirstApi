@@ -1,3 +1,4 @@
+const { json } = require("express");
 const express = require("express")
 const router = express.Router();
 var https = require("https");
@@ -17,7 +18,7 @@ router.post('/' , (req, res)=>{
         body+=chunk;
     });
     response.on('end',function(){
-        var json = JSON.parse(body);
+        const json = JSON.parse(body);
         console.log(json)
         res.render("response", {json})
     });
@@ -27,7 +28,5 @@ router.post('/' , (req, res)=>{
     console.error('and the error is '+e);
     });
     request.end();
-
 })
-
 module.exports = router

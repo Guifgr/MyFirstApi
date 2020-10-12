@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Guifg API</title>
 </head>
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="<%= json.html_url %>">GitHub</a>
+        <a class="navbar-brand" href="<%= json.html_url+"?tab=repositories" %>">Repositórios</a>
+        <a class="navbar-brand" href="<%= json.followers_url %>">Followers</a>
+        <% if(json.blog != ''){ %> 
+            <a href="<%= json.blog %>" class="navbar-brand">Site do programador!</a>
+        <% } %> 
+    </nav>
+
     <img src="<%= json.avatar_url %>" alt="eu">
     <h1><%= json.name %> </h1>
     <h4><%= json.bio %> </h1>
-    <% if(json.blog != ''){ %> 
-        <a href="<%= json.blog %>">Site do programador!</a>
-    <% } %> 
+    
 </body>
 </html>

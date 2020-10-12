@@ -16,5 +16,4 @@ app.get("/", (req, res)=>{
     res.render("index")
 })
 app.use("/response", responseRouter);
-
 app.listen(PORT)
