@@ -7,19 +7,25 @@
     <title>Guifg API</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light center">
+        <div class="d-md-flex d-block flex-row mx-md-auto mx-0">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="<%= json.html_url %>">GitHub</a>
-        <a class="navbar-brand" href="<%= json.html_url+"?tab=repositories" %>">Repositórios</a>
-        <a class="navbar-brand" href="<%= json.followers_url %>">Followers</a>
-        <% if(json.blog != ''){ %> 
-            <a href="<%= json.blog %>" class="navbar-brand">Site do programador!</a>
-        <% } %> 
+            <a class="navbar-brand" href="<%= json.html_url %>">GitHub</a>
+            <a class="navbar-brand" href="<%= json.html_url+"?tab=repositories" %>">Repositórios</a>
+            <a class="navbar-brand" href="<%= json.followers_url %>">Followers</a>
+            <% if(json.blog != ''){ %> 
+                <a href="<%= json.blog %>" class="navbar-brand">Site do programador!</a>
+            <% } %> 
+        </div>
     </nav>
 
-    <img src="<%= json.avatar_url %>" alt="eu">
-    <h1><%= json.name %> </h1>
-    <h4><%= json.bio %> </h1>
-    
+    <div class="row d-flex justify-content-center">    
+        <div class="">
+            <img class="rounded-circle"src="<%= json.avatar_url %>" alt="eu">
+            <h1><%= json.name %> </h1>
+            <h4><%= json.bio %> </h1>
+        </div>
+    </div>
+            
 </body>
 </html>

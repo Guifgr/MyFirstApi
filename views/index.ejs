@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get Git</title>
 </head>
 <body>
-    <form method="post" action="/response">
-        <label for="userName">Escreva o nome de usuário que deseja procurar</label><br>
-        <input type="text" name="userName" id="userName">
-        <input type="submit" value="send">
+    <form class="d-flex justify-content-center" method="post" action="/response">
+        <div class="form-group">
+            <label for="userName">Escreva o nome de usuário que deseja procurar</label><br>
+            <input class="form-control" type="text" name="userName" id="userName">
+            <input class="btn btn-primary" type="submit">
+        </div>
     </form>
 </body>
 </html>
