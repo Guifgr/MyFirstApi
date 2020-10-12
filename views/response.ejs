@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guifg API</title>
+</head>
+<body>
+    <img src="<%= json.avatar_url %>" alt="eu">
+    <h1><%= json.name %> </h1>
+    <h4><%= json.bio %> </h1>
+    <% if(json.blog != ''){ %> 
+        <a href="<%= json.blog %>">Site do programador!</a>
+    <% } %> 
+</body>
+</html>
