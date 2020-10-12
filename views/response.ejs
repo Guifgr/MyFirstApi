@@ -8,7 +8,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light center">
-        <div class="d-md-flex d-block flex-row mx-auto mx-0">
+        <div class="d-md-flex d-block flex-row mx-auto">
 
             <a class="navbar-brand" href="<%= json.html_url %>">GitHub</a>
             <a class="navbar-brand" href="<%= json.html_url+"?tab=repositories" %>">Repositórios</a>
@@ -19,7 +19,7 @@
         </div>
     </nav>
     <div class="mt-4 mx-auto w-25">
-        <img class="rounded-circle"src="<%= json.avatar_url %>" alt="eu">
+        <img class="w-100 mx-auto rounded-circle"src="<%= json.avatar_url %>" alt="eu">
         <% if(json.name !== null){ %> 
             <h1 class=""><%= json.name %> </h1>
         <% }else{ %> 
