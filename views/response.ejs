@@ -22,7 +22,11 @@
     <div class="row d-flex justify-content-center">    
         <div class="">
             <img class="rounded-circle"src="<%= json.avatar_url %>" alt="eu">
-            <h1><%= json.name %> </h1>
+            <% if(json.name !== null){ %> 
+                <h1><%= json.name %> </h1>
+            <% }else{ %> 
+                <h1><%= json.login %> </h1>
+            <% } %> 
             <h4><%= json.bio %> </h1>
         </div>
     </div>

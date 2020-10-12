@@ -12,6 +12,12 @@
             <label for="userName">Escreva o nome de usuário que deseja procurar</label><br>
             <input class="form-control" type="text" name="userName" id="userName">
             <input class="btn btn-primary" type="submit">
+            <% try { %>
+                <h1><%= mensage %> </h1>
+            <% } catch (ReferenceError) {
+                mensage = ''
+            }
+            %> 
         </div>
     </form>
 </body>

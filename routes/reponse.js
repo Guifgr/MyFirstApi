@@ -3,8 +3,12 @@ const express = require("express")
 const router = express.Router();
 var https = require("https");
 
+router.get('/', (req, res) =>{
+    res.render('index')
+})
 router.post('/' , (req, res)=>{
     var userName= req.body.userName;
+    userName = userName.replace(/[^a-zA-Z ]/g, "")
     var options = {
 
         host:'api.github.com',
@@ -20,7 +24,11 @@ router.post('/' , (req, res)=>{
     response.on('end',function(){
         const json = JSON.parse(body);
         console.log(json)
-        res.render("response", {json})
+        if(json.message === 'Not Found'){
+            res.render("index", {mensage: "Not found!"})
+        }else{
+            res.render("response", {json})
+        }
     });
 
     });
