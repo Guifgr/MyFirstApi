@@ -9,6 +9,7 @@ router.get('/', (req, res) =>{
 router.post('/' , (req, res)=>{
     var userName= req.body.userName;
     userName = userName.replace(/[^a-zA-Z ]/g, "")
+    userName = userName.replace(/\s/g, '');
     var options = {
 
         host:'api.github.com',
