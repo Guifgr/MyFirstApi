@@ -23,13 +23,8 @@ router.post('/' , (req, res)=>{
         body+=chunk;
     });
     response.on('end',function(){
-        const json = JSON.parse(body);
+        var json = JSON.parse(body);
         console.log(json)
-        if(json.message === 'Not Found'){
-            res.render("index", {mensage: "Not found!"})
-        }else{
-            res.render("response", {json})
-        }
         if(json.message === "API rate limit exceeded for 187.95.168.62. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"){
             json={
                 login: 'yanandrey',
@@ -66,6 +61,10 @@ router.post('/' , (req, res)=>{
                 updated_at: '2020-09-20T20:35:57Z'
               }
               res.render("response", {json})
+        }else if(json.message === 'Not Found'){
+            res.render("index", {mensage: "Not found!"})
+        }else{
+            res.render("response", {json})
         }
         });
 
