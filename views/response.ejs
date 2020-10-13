@@ -40,6 +40,9 @@
             <h1 class="card-title"><%= json.login %> </h1>
         <% } %>
         <p class="card-text"><%= json.bio %></p>
+        <% if(json.err !== null){ %> 
+            <p class="card-title"><%= json.err %> </p>
+        <% } %>
         <a href="<%= json.html_url %>" class="btn btn-primary">Meu Git</a>
         </div>
     </div>
